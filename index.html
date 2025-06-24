@@ -4,86 +4,466 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Mãe+</title>
+	<title>Mãe+ | Suporte Integral à Maternidade</title>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+		rel="stylesheet">
 	<style>
-		body {
-			font-family: 'Segoe UI', sans-serif;
+		* {
 			margin: 0;
-			background-color: #fffafc;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			font-family: 'Inter', sans-serif;
+			margin: 0;
+			background: linear-gradient(135deg, #fff5f8, #fef7ff, #fff0f5);
+			background-size: 400% 400%;
+			animation: gradientShift 15s ease infinite;
 			color: #444;
+			overflow-x: hidden;
+		}
+
+		/* Animação de gradiente de fundo */
+		@keyframes gradientShift {
+			0% {
+				background-position: 0% 50%;
+			}
+
+			50% {
+				background-position: 100% 50%;
+			}
+
+			100% {
+				background-position: 0% 50%;
+			}
+		}
+
+		/* Animações de entrada */
+		@keyframes fadeInUp {
+			from {
+				opacity: 0;
+				transform: translateY(30px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes fadeInLeft {
+			from {
+				opacity: 0;
+				transform: translateX(-30px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+
+		@keyframes fadeInRight {
+			from {
+				opacity: 0;
+				transform: translateX(30px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+
+		/* Efeito typewriter */
+		@keyframes typing {
+			from {
+				width: 0;
+			}
+
+			to {
+				width: 100%;
+			}
+		}
+
+		@keyframes blink {
+			50% {
+				border-color: transparent;
+			}
+		}
+
+		/* Animação de pulso para o botão */
+		@keyframes pulse {
+			0% {
+				transform: scale(1);
+				box-shadow: 0 0 0 0 rgba(240, 147, 176, 0.7);
+			}
+
+			70% {
+				transform: scale(1.05);
+				box-shadow: 0 0 0 10px rgba(240, 147, 176, 0);
+			}
+
+			100% {
+				transform: scale(1);
+				box-shadow: 0 0 0 0 rgba(240, 147, 176, 0);
+			}
+		}
+
+		/* Animação de coração */
+		@keyframes heartbeat {
+
+			0%,
+			100% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.1);
+			}
 		}
 
 		header {
-			background-color: #f9e7ef;
-			padding: 1.5rem;
+			background: linear-gradient(135deg, #f9e7ef, #fdf2f8);
+			padding: 2rem;
 			text-align: center;
-			border-bottom: 2px solid #f0c5d6;
+			border-bottom: 3px solid #f0c5d6;
+			position: relative;
+			overflow: hidden;
+		}
+
+		header::before {
+			content: '';
+			position: absolute;
+			top: -50%;
+			left: -50%;
+			width: 200%;
+			height: 200%;
+			background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+			animation: shimmer 3s ease-in-out infinite;
+		}
+
+		@keyframes shimmer {
+			0% {
+				transform: translateX(-100%) translateY(-100%) rotate(45deg);
+			}
+
+			100% {
+				transform: translateX(100%) translateY(100%) rotate(45deg);
+			}
 		}
 
 		header h1 {
+			font-family: 'Playfair Display', serif;
+			font-size: 3.5rem;
 			margin: 0;
 			color: #c34c7a;
+			position: relative;
+			z-index: 2;
+			animation: fadeInUp 1s ease-out;
 		}
 
 		header p {
-			margin: 0.5rem 0 0;
+			margin: 1rem 0 0;
 			font-style: italic;
+			font-size: 1.2rem;
+			color: #8b5a6b;
+			position: relative;
+			z-index: 2;
+			animation: fadeInUp 1s ease-out 0.3s both;
 		}
 
 		.hero {
-			padding: 3rem 1rem;
+			padding: 4rem 1rem;
 			text-align: center;
-			background: linear-gradient(to bottom, #fff0f5, #ffffff);
+			background: linear-gradient(135deg, #fff0f5, #ffffff, #fef7ff);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hero::before {
+			content: '💝';
+			position: absolute;
+			font-size: 8rem;
+			opacity: 0.05;
+			top: 20%;
+			right: 10%;
+			animation: float 6s ease-in-out infinite;
+		}
+
+		@keyframes float {
+
+			0%,
+			100% {
+				transform: translateY(0px);
+			}
+
+			50% {
+				transform: translateY(-20px);
+			}
 		}
 
 		.hero h2 {
-			font-size: 2rem;
-			margin-bottom: 1rem;
+			font-family: 'Playfair Display', serif;
+			font-size: 2.8rem;
+			margin-bottom: 2rem;
 			color: #b03060;
+			position: relative;
+			overflow: hidden;
+			white-space: nowrap;
+			border-right: 3px solid #b03060;
+			width: 0;
+			animation: typing 3s steps(40) 0.5s forwards, blink 0.75s step-end infinite;
+		}
+
+		.hero-button {
+			display: inline-block;
+			margin-top: 1rem;
+			animation: fadeInUp 1s ease-out 2s both;
 		}
 
 		.hero button {
-			background-color: #f093b0;
+			background: linear-gradient(45deg, #f093b0, #e87a95);
 			color: white;
 			border: none;
-			padding: 1rem 2rem;
-			font-size: 1rem;
-			border-radius: 30px;
+			padding: 1.2rem 2.5rem;
+			font-size: 1.1rem;
+			font-weight: 500;
+			border-radius: 50px;
 			cursor: pointer;
-			transition: 0.3s ease;
+			transition: all 0.3s ease;
+			position: relative;
+			overflow: hidden;
+			box-shadow: 0 4px 15px rgba(240, 147, 176, 0.3);
 		}
 
 		.hero button:hover {
-			background-color: #da7a9a;
+			transform: translateY(-2px);
+			box-shadow: 0 8px 25px rgba(240, 147, 176, 0.4);
+			animation: pulse 2s infinite;
+		}
+
+		.hero button::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+			transition: left 0.5s;
+		}
+
+		.hero button:hover::before {
+			left: 100%;
 		}
 
 		.section {
-			padding: 2rem 1rem;
-			max-width: 800px;
+			padding: 3rem 1rem;
+			max-width: 900px;
 			margin: 0 auto;
+			position: relative;
+		}
+
+		.section-animated {
+			opacity: 0;
+			transform: translateY(50px);
+			transition: all 0.8s ease-out;
+		}
+
+		.section-animated.animate {
+			opacity: 1;
+			transform: translateY(0);
 		}
 
 		.section h3 {
+			font-family: 'Playfair Display', serif;
+			font-size: 2.2rem;
 			color: #b03060;
+			margin-bottom: 1.5rem;
+			position: relative;
+			display: inline-block;
+		}
+
+		.section h3::after {
+			content: '';
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			width: 0;
+			height: 3px;
+			background: linear-gradient(45deg, #f093b0, #e87a95);
+			transition: width 0.8s ease;
+		}
+
+		.section-animated.animate h3::after {
+			width: 100%;
+		}
+
+		.features-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 2rem;
+			margin-top: 2rem;
+		}
+
+		.feature-card {
+			background: rgba(255, 255, 255, 0.7);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(240, 197, 214, 0.3);
+			border-radius: 20px;
+			padding: 2rem;
+			text-align: center;
+			transition: all 0.3s ease;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.feature-card::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 4px;
+			background: linear-gradient(45deg, #f093b0, #e87a95, #d6619a);
+			transform: translateX(-100%);
+			transition: transform 0.5s ease;
+		}
+
+		.feature-card:hover::before {
+			transform: translateX(0);
+		}
+
+		.feature-card:hover {
+			transform: translateY(-10px);
+			box-shadow: 0 20px 40px rgba(240, 147, 176, 0.2);
+		}
+
+		.feature-icon {
+			font-size: 2.5rem;
+			margin-bottom: 1rem;
+			animation: heartbeat 2s ease-in-out infinite;
+		}
+
+		.feature-title {
+			font-family: 'Playfair Display', serif;
+			font-size: 1.4rem;
+			color: #b03060;
+			margin-bottom: 0.5rem;
+		}
+
+		.coming-soon {
+			background: linear-gradient(135deg, #fff5f8, #fef7ff);
+			border-radius: 20px;
+			padding: 2rem;
+			margin: 2rem 0;
+			text-align: center;
+			border: 2px dashed #f0c5d6;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.coming-soon::before {
+			content: '✨';
+			position: absolute;
+			font-size: 1.5rem;
+			opacity: 0.6;
+			animation: sparkle 2s ease-in-out infinite;
+		}
+
+		@keyframes sparkle {
+
+			0%,
+			100% {
+				transform: scale(1) rotate(0deg);
+				opacity: 0.6;
+			}
+
+			50% {
+				transform: scale(1.2) rotate(180deg);
+				opacity: 1;
+			}
 		}
 
 		footer {
-			background-color: #f9e7ef;
+			background: linear-gradient(135deg, #f9e7ef, #fdf2f8);
 			text-align: center;
-			padding: 1rem;
-			font-size: 0.9rem;
-			color: #666;
+			padding: 2rem 1rem;
+			margin-top: 3rem;
+			border-top: 3px solid #f0c5d6;
 		}
 
-		a {
+		footer a {
 			color: #c34c7a;
 			text-decoration: none;
-			margin: 0 5px;
+			transition: all 0.3s ease;
+			position: relative;
+		}
+
+		footer a::after {
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: #c34c7a;
+			transition: width 0.3s ease;
+		}
+
+		footer a:hover::after {
+			width: 100%;
+		}
+
+		.heart {
+			color: #e87a95;
+			animation: heartbeat 1.5s ease-in-out infinite;
+			display: inline-block;
+		}
+
+		/* Responsividade */
+		@media (max-width: 768px) {
+			header h1 {
+				font-size: 2.5rem;
+			}
+
+			.hero h2 {
+				font-size: 2rem;
+				white-space: normal;
+				border-right: none;
+				width: auto;
+				animation: fadeInUp 1s ease-out 0.5s both;
+			}
+
+			.features-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		/* Scroll indicator */
+		.scroll-indicator {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 0%;
+			height: 4px;
+			background: linear-gradient(45deg, #f093b0, #e87a95);
+			z-index: 1000;
+			transition: width 0.25s ease-out;
 		}
 	</style>
 </head>
 
 <body>
+	<div class="scroll-indicator"></div>
+
 	<header>
 		<h1>Mãe+</h1>
 		<p>+ Saúde • + Comunidade • + Apoio</p>
@@ -91,23 +471,41 @@
 
 	<section class="hero">
 		<h2>A tua rede de apoio começa aqui.</h2>
-		<a href="https://forms.gle/EXEMPLO_DO_GOOGLE_FORM" target="_blank">
-			<button>Pré-inscreve-te</button>
-		</a>
+		<div class="hero-button">
+			<a href="https://forms.gle/EXEMPLO_DO_GOOGLE_FORM" target="_blank">
+				<button>Pré-inscreve-te</button>
+			</a>
+		</div>
 	</section>
 
-	<section class="section">
-		<h3>Porque o “+” importa</h3>
-		<ul>
-			<li><strong>+ Saúde</strong>: suporte clínico baseado em evidência</li>
-			<li><strong>+ Comunidade</strong>: conexão com outras mães na tua zona</li>
-			<li><strong>+ Tecnologia</strong>: apoio personalizado, onde estiveres</li>
-		</ul>
+	<section class="section section-animated">
+		<h3>Porque o "+" importa</h3>
+		<div class="features-grid">
+			<div class="feature-card">
+				<div class="feature-icon">🏥</div>
+				<div class="feature-title">+ Saúde</div>
+				<p>Suporte clínico baseado em evidência, sempre à tua disposição</p>
+			</div>
+			<div class="feature-card">
+				<div class="feature-icon">👥</div>
+				<div class="feature-title">+ Comunidade</div>
+				<p>Conexão com outras mães na tua zona, criando laços reais</p>
+			</div>
+			<div class="feature-card">
+				<div class="feature-icon">📱</div>
+				<div class="feature-title">+ Tecnologia</div>
+				<p>Apoio personalizado, onde estiveres, quando precisares</p>
+			</div>
+		</div>
 	</section>
 
-	<section class="section">
-		<h3>Em breve:</h3>
-		<p>Vídeos, webinares e eventos para mães como tu.</p>
+	<section class="section section-animated">
+		<div class="coming-soon">
+			<h3>Em breve</h3>
+			<p>🎥 Vídeos educativos com enfermeiras especializadas</p>
+			<p>📺 Webinares interativos sobre parentalidade</p>
+			<p>🤝 Eventos presenciais para mães em Portugal</p>
+		</div>
 	</section>
 
 	<footer>
@@ -115,8 +513,82 @@
 			<a href="https://www.instagram.com/mae.mais.pt" target="_blank">Instagram</a> |
 			<a href="mailto:ola@maemais.pt">Email</a>
 		</p>
-		<p>Criado com ❤️ para mães em Portugal</p>
+		<p>Criado com <span class="heart">❤️</span> para mães em Portugal</p>
 	</footer>
+
+	<script>
+		// Scroll progress indicator
+		window.addEventListener('scroll', () => {
+			const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+			document.querySelector('.scroll-indicator').style.width = scrolled + '%';
+		});
+
+		// Scroll-triggered animations
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
+		};
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('animate');
+				}
+			});
+		}, observerOptions);
+
+		document.querySelectorAll('.section-animated').forEach(section => {
+			observer.observe(section);
+		});
+
+		// Add floating hearts animation
+		function createFloatingHeart() {
+			const heart = document.createElement('div');
+			heart.innerHTML = '💝';
+			heart.style.cssText = `
+				position: fixed;
+				font-size: 1.5rem;
+				opacity: 0.6;
+				pointer-events: none;
+				z-index: 1000;
+				animation: floatUp 4s ease-out forwards;
+				left: ${Math.random() * 100}vw;
+				bottom: -50px;
+			`;
+
+			document.body.appendChild(heart);
+
+			setTimeout(() => {
+				heart.remove();
+			}, 4000);
+		}
+
+		const floatUpStyle = document.createElement('style');
+		floatUpStyle.textContent = `
+			@keyframes floatUp {
+				0% {
+					transform: translateY(0) rotate(0deg);
+					opacity: 0.6;
+				}
+				100% {
+					transform: translateY(-100vh) rotate(360deg);
+					opacity: 0;
+				}
+			}
+		`;
+		document.head.appendChild(floatUpStyle);
+
+		// Create floating hearts every 10 seconds
+		setInterval(createFloatingHeart, 10000);
+
+		// Button click animation
+		document.querySelector('.hero button').addEventListener('click', function (e) {
+			this.style.animation = 'pulse 0.6s ease-out';
+			setTimeout(() => {
+				this.style.animation = '';
+			}, 600);
+		});
+	</script>
 </body>
 
 </html>
