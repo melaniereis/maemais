@@ -4,110 +4,452 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Mãe+ | Suporte Integral à Maternidade</title>
+	<title>Mãe+ | Pré-Inscrição Aberta - Plataforma de Apoio à Maternidade</title>
 	<meta name="description"
-		content="Mãe+ oferece suporte clínico, rede de mães e tecnologia personalizada para a tua jornada na parentalidade.">
-	<meta name="keywords" content="maternidade, parentalidade, apoio a mães, SNS, comunidade de mães">
+		content="Junta-te às primeiras 1000 mães portuguesas! Pré-inscrição para a plataforma Mãe+ criada por uma enfermeira que está a aprender programação na 42. Acesso antecipado + 50% desconto + Checklist SNS24 grátis.">
+	<meta name="keywords"
+		content="maternidade, apoio mães, app maternidade, Portugal, pré-inscrição, lista espera, enfermeira">
+
+	<!-- Preconnect para performance -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@300;400;600;700&display=swap"
+		rel="stylesheet">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="logo/yb51wyidjesdrsdztias.png">
+
+	<!-- Stylesheet -->
 	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Meta tags para redes sociais -->
+	<meta property="og:title" content="Mãe+ | Pré-Inscrição Aberta - Lista de Espera">
+	<meta property="og:description"
+		content="Sê uma das primeiras 1000 mães a ter acesso à plataforma Mãe+. Criada por uma enfermeira que está a aprender programação. Acesso antecipado + desconto exclusivo!">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://maemais.pt">
+	<meta property="og:image" content="https://maemais.pt/img/hero-desktop.jpg">
+
+	<!-- Analytics placeholder -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script> -->
 </head>
 
 <body>
+	<!-- Skip link para acessibilidade -->
+	<a href="#main-content" class="skip-link">Saltar para conteúdo principal</a>
 
+	<!-- Header -->
 	<header role="banner">
 		<div class="container">
-			<h1>Mãe+</h1>
-			<p class="tagline">+ Saúde • + Comunidade • + Apoio</p>
+			<div class="header-content">
+				<div class="logo-section">
+					<img src="logo/yb51wyidjesdrsdztias.png" alt="Logo Mãe+" class="logo">
+					<h1>Mãe+</h1>
+				</div>
+				<p class="tagline">+ Saúde • + Comunidade • + Tecnologia</p>
+				<div class="launch-badge">
+					<span class="badge-icon">🚀</span>
+					<span>Pré-Inscrição Aberta • Lançamento em Setembro 2025</span>
+				</div>
+			</div>
 		</div>
 	</header>
 
+	<!-- Navegação -->
 	<nav aria-label="Secções principais" class="scroll-nav">
-		<ul>
-			<li><a href="#hero">Início</a></li>
-			<li><a href="#valores">O que é</a></li>
-			<li><a href="#testemunhos">Testemunhos</a></li>
-			<li><a href="#pre-registo">Pré-registo</a></li>
-		</ul>
+		<div class="container">
+			<ul>
+				<li><a href="#hero">Pré-Inscrição</a></li>
+				<li><a href="#valores">O que é</a></li>
+				<li><a href="#sobre">Sobre Mim</a></li>
+				<li><a href="#contacto">Contacto</a></li>
+			</ul>
+		</div>
 	</nav>
 
-	<main>
-		<!-- Hero -->
+	<main id="main-content">
+		<!-- Hero Section com Pré-Inscrição -->
 		<section id="hero" class="hero" aria-labelledby="hero-title">
-			<picture>
-				<source media="(max-width:768px)" srcset="img/hero-mobile.webp" type="image/webp">
-				<img src="img/hero-desktop.jpg" alt="Mãe a segurar bebé" class="hero-img">
-			</picture>
+			<div class="hero-background">
+				<picture>
+					<source media="(max-width:768px)" srcset="img/hero-mobile.webp" type="image/webp">
+					<img src="img/hero-desktop.jpg" alt="Mãe abraçando bebé com carinho" class="hero-img">
+				</picture>
+			</div>
 			<div class="hero-content">
-				<h2 id="hero-title">A tua rede de apoio começa aqui.</h2>
-				<a href="#pre-registo" class="btn-cta">Pré-inscreve-te</a>
+				<div class="hero-badge">
+					<span class="badge-icon">✨</span>
+					<span>Lista de Espera Exclusiva - Sê a Primeira!</span>
+				</div>
+				<h2 id="hero-title">Junta-te às primeiras 1000 mães portuguesas</h2>
+				<p>Sê uma das primeiras a ter acesso à plataforma que vai revolucionar a maternidade em Portugal.
+					<strong>Pré-inscrição gratuita com benefícios exclusivos</strong>
+				</p>
+
+				<!-- Estatísticas de Pré-Inscrição -->
+				<div class="hero-stats">
+					<div class="stat">
+						<span class="stat-number" id="preregistration-counter">0</span>
+						<span class="stat-label">pré-inscrições até agora</span>
+					</div>
+					<div class="stat">
+						<span class="stat-number">1000</span>
+						<span class="stat-label">vagas disponíveis</span>
+					</div>
+				</div>
+
+				<!-- Formulário de Pré-Inscrição -->
+				<form id="pre-registration-form" class="hero-form">
+					<div class="form-step active" id="preregister-step">
+						<div class="form-row">
+							<input type="text" id="pre-nome" name="nome" placeholder="O teu nome" required
+								aria-label="Nome">
+							<input type="email" id="pre-email" name="email" placeholder="O teu melhor email" required
+								aria-label="Email">
+						</div>
+						<div class="form-extras">
+							<select id="pre-situacao" name="situacao" required aria-label="Situação atual">
+								<option value="">Como te describes?</option>
+								<option value="gravida">Estou grávida</option>
+								<option value="mae-recente">Mãe há menos de 1 ano</option>
+								<option value="mae-experiente">Mãe experiente</option>
+								<option value="planeando">Planeio engravidar</option>
+								<option value="tentando">Estou a tentar engravidar</option>
+							</select>
+						</div>
+						<div class="privacy-check">
+							<label class="checkbox-label">
+								<input type="checkbox" id="pre-privacy" required>
+								<span class="checkmark"></span>
+								<span>Aceito receber emails sobre o Mãe+ e posso cancelar a qualquer momento</span>
+							</label>
+						</div>
+						<button type="submit" class="btn-preregister">
+							<span class="btn-icon">🎯</span>
+							Ser a Primeira + Checklist Grátis
+						</button>
+					</div>
+
+					<!-- Confirmação de Pré-Inscrição -->
+					<div class="form-step" id="preregister-success">
+						<div class="success-message">
+							<div class="success-animation">
+								<div class="success-icon">🎉</div>
+								<div class="floating-hearts">💕💕💕</div>
+							</div>
+							<h3>Parabéns! És a primeira!</h3>
+							<p>És a pessoa nº <strong><span id="user-slot-number">1</span></strong> na nossa lista de
+								espera!</p>
+
+							<div class="success-benefits">
+								<h4>O que recebes agora:</h4>
+								<ul class="success-list">
+									<li>✅ Checklist SNS24 no teu email em 5 minutos</li>
+									<li>🎯 Acesso antecipado 30 dias antes do lançamento</li>
+									<li>💰 50% desconto exclusivo nos primeiros 6 meses</li>
+									<li>📧 Atualizações semanais sobre o desenvolvimento</li>
+									<li>💬 Influência direta nas funcionalidades da app</li>
+								</ul>
+							</div>
+
+							<div class="next-steps">
+								<a href="#sobre" class="btn-secondary">Conhecer a Criadora</a>
+								<button onclick="sharePreRegistration()" class="btn-primary">
+									<span>Partilhar com Amigas</span>
+									<span>💌</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<!-- Benefícios da Pré-Inscrição -->
+				<div class="preregister-benefits">
+					<h3>O que recebes ao pré-inscreveres-te:</h3>
+					<div class="benefits-grid">
+						<div class="benefit-item">
+							<span class="benefit-icon">🎯</span>
+							<span>Acesso antecipado (30 dias)</span>
+						</div>
+						<div class="benefit-item">
+							<span class="benefit-icon">💰</span>
+							<span>50% desconto exclusivo</span>
+						</div>
+						<div class="benefit-item">
+							<span class="benefit-icon">📋</span>
+							<span>Checklist SNS24 imediato</span>
+						</div>
+						<div class="benefit-item">
+							<span class="benefit-icon">💌</span>
+							<span>Conteúdo exclusivo por email</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<!-- O que é -->
+		<!-- Seção de Urgência/Escassez -->
+		<section class="urgency-section">
+			<div class="container">
+				<div class="urgency-content">
+					<div class="urgency-icon">⏰</div>
+					<h3>Apenas 1000 lugares disponíveis na pré-inscrição</h3>
+					<p>Depois de atingirmos 1000 pré-inscrições, a lista será fechada e só reabrirá no lançamento
+						oficial em setembro de 2025.</p>
+					<div class="progress-container">
+						<div class="progress-bar-urgency">
+							<div class="progress-fill-urgency" style="width: 0%"></div>
+						</div>
+						<div class="progress-stats">
+							<span id="progress-current">0 / 1000</span>
+							<span id="progress-remaining">1000 vagas disponíveis</span>
+						</div>
+					</div>
+					<div class="countdown-section">
+						<p>Lançamento previsto para:</p>
+						<div class="countdown-timer">
+							<div class="timer-item">
+								<span class="timer-number">2</span>
+								<span class="timer-label">meses</span>
+							</div>
+							<div class="timer-item">
+								<span class="timer-number">15</span>
+								<span class="timer-label">dias</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- O que é o Mãe+ -->
 		<section id="valores" class="section fade-in-up" aria-labelledby="valores-title">
 			<div class="container">
-				<h3 id="valores-title">Porque o “+” importa</h3>
+				<div class="section-header">
+					<h3 id="valores-title">O que estou a construir para nós</h3>
+					<p class="section-intro">Uma plataforma pensada por uma enfermeira e futura programadora para tornar
+						a maternidade mais fácil e conectada em Portugal.</p>
+				</div>
 				<div class="features-grid">
-					<figure class="feature-card">
-						<span role="img" aria-label="+ Saúde" class="feature-icon">🏥</span>
-						<figcaption>
-							<h4>+ Saúde</h4>
-							<p>Conteúdos validados por enfermeiras especialistas.</p>
-						</figcaption>
-					</figure>
-					<figure class="feature-card">
-						<span role="img" aria-label="+ Comunidade" class="feature-icon">👥</span>
-						<figcaption>
-							<h4>+ Comunidade</h4>
-							<p>Grupos locais de mães, apoio emocional real.</p>
-						</figcaption>
-					</figure>
-					<figure class="feature-card">
-						<span role="img" aria-label="+ Tecnologia" class="feature-icon">📱</span>
-						<figcaption>
-							<h4>+ Tecnologia</h4>
-							<p>App personalizada, chatbot e matchmaking por CEP.</p>
-						</figcaption>
-					</figure>
+					<div class="feature-card">
+						<div class="feature-icon-wrapper">
+							<span role="img" aria-label="Saúde" class="feature-icon">🌸</span>
+						</div>
+						<h4>+ Saúde</h4>
+						<p>Conteúdos sobre saúde materno-infantil criados com conhecimento de enfermagem e validados por
+							profissionais especializados.</p>
+						<ul class="feature-list">
+							<li>Informação baseada em conhecimento clínico</li>
+							<li>Guias de desenvolvimento infantil</li>
+							<li>Dicas de bem-estar maternal</li>
+						</ul>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon-wrapper">
+							<span role="img" aria-label="Comunidade" class="feature-icon">🤱</span>
+						</div>
+						<h4>+ Comunidade</h4>
+						<p>Rede de apoio entre mães portuguesas na mesma região, porque juntas somos mais fortes.</p>
+						<ul class="feature-list">
+							<li>Grupos locais por região</li>
+							<li>Partilha de experiências</li>
+							<li>Apoio emocional entre pares</li>
+						</ul>
+					</div>
+					<div class="feature-card">
+						<div class="feature-icon-wrapper">
+							<span role="img" aria-label="Tecnologia" class="feature-icon">📱</span>
+						</div>
+						<h4>+ Tecnologia</h4>
+						<p>App intuitiva desenvolvida com as melhores práticas que estou a aprender na 42.</p>
+						<ul class="feature-list">
+							<li>Interface simples e maternal</li>
+							<li>Código limpo e eficiente</li>
+							<li>Acesso offline aos conteúdos</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Testemunhos -->
-		<section id="testemunhos" class="section fade-in-up" aria-labelledby="testemunhos-title">
+		<!-- Sobre Mim -->
+		<section id="sobre" class="section fade-in-up" aria-labelledby="sobre-title">
 			<div class="container">
-				<h3 id="testemunhos-title">O que dizem as mães</h3>
-				<div class="carrossel">
-					<blockquote>“Senti-me ouvida e acompanhada desde o primeiro minuto.” <cite>– Sofia, Lisboa</cite>
-					</blockquote>
-					<blockquote>“O Mãe+ transformou o meu pós-parto!” <cite>– Inês, Braga</cite></blockquote>
-					<blockquote>“Recomendo a todas as futuras mães.” <cite>– Ana, Porto</cite></blockquote>
+				<div class="section-header">
+					<h3 id="sobre-title">Quem está por trás do Mãe+</h3>
+				</div>
+				<div class="about-grid">
+					<div class="founder-image">
+						<img src="img/founder.jpg" alt="Fundadora do Mãe+" class="founder-img">
+						<div class="founder-badges">
+							<span class="badge">👩‍⚕️ Enfermeira</span>
+							<span class="badge">🎓 Estudante na 42</span>
+							<span class="badge">🤱 Mãe</span>
+						</div>
+					</div>
+					<div class="founder-bio">
+						<h4>Olá, eu sou a criadora do Mãe+ 👋</h4>
+						<p>Sou <strong>enfermeira e mãe</strong> que está a aprender programação na prestigiada escola
+							42. Apaixonada por usar a tecnologia para tornar o mundo um lugar melhor para as famílias
+							portuguesas.</p>
+						<p>A minha experiência como enfermeira deu-me uma compreensão profunda das necessidades de saúde
+							das mães e bebés. Agora, estou a adquirir as competências técnicas na 42 para criar soluções
+							digitais que realmente façam a diferença.</p>
+						<p>O Mãe+ nasce da combinação única da minha experiência clínica como enfermeira, o conhecimento
+							de programação que estou a desenvolver, e a vivência real de ser mãe em Portugal.</p>
+						<div class="personal-touch">
+							<blockquote>
+								<p>"Como enfermeira, conheço as necessidades médicas. Como mãe, vivo os desafios
+									diários. Como estudante na 42, estou a aprender a criar as soluções que precisamos."
+								</p>
+							</blockquote>
+						</div>
+						<div class="founder-stats">
+							<div class="stat-item">
+								<span class="stat-icon">👩‍⚕️</span>
+								<div>
+									<strong>Enfermeira qualificada</strong>
+									<small>Conhecimento clínico especializado</small>
+								</div>
+							</div>
+							<div class="stat-item">
+								<span class="stat-icon">🎓</span>
+								<div>
+									<strong>Estudante na 42</strong>
+									<small>A aprender programação de excelência</small>
+								</div>
+							</div>
+							<div class="stat-item">
+								<span class="stat-icon">👶</span>
+								<div>
+									<strong>Mãe orgulhosa</strong>
+									<small>Experiência real de maternidade</small>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Pré-registo -->
-		<section id="pre-registo" class="section fade-in-up" aria-labelledby="pre-registo-title">
+		<!-- Contacto -->
+		<section id="contacto" class="section fade-in-up" aria-labelledby="contacto-title">
 			<div class="container">
-				<h3 id="pre-registo-title">Queres fazer parte?</h3>
-				<p>Inscreve-te para acesso antecipado e junta-te à comunidade Mãe+.</p>
-				<form action="https://forms.gle/EXEMPLO_DO_GOOGLE_FORM" target="_blank" class="registo-form">
-					<input type="email" name="email" placeholder="O teu email" required>
-					<button type="submit">Enviar</button>
-				</form>
+				<div class="section-header">
+					<h3 id="contacto-title">Vamos conversar</h3>
+					<p class="section-intro">Tens sugestões, dúvidas ou queres colaborar? Adoraria ouvir-te!</p>
+				</div>
+				<div class="contact-grid">
+					<div class="contact-item">
+						<div class="contact-icon-wrapper">
+							<span class="contact-icon">📧</span>
+						</div>
+						<h4>Email</h4>
+						<p><a href="mailto:contacto@maemais.pt">contacto@maemais.pt</a></p>
+						<small>Resposta em 24h</small>
+					</div>
+					<div class="contact-item">
+						<div class="contact-icon-wrapper">
+							<span class="contact-icon">📱</span>
+						</div>
+						<h4>Instagram</h4>
+						<p><a href="https://www.instagram.com/maemais.pt" target="_blank" rel="noopener">@maemais.pt</a>
+						</p>
+						<small>Atualizações diárias</small>
+					</div>
+					<div class="contact-item">
+						<div class="contact-icon-wrapper">
+							<span class="contact-icon">💬</span>
+						</div>
+						<h4>Feedback</h4>
+						<p>As tuas ideias moldam o Mãe+</p>
+						<small>Cada sugestão conta</small>
+					</div>
+				</div>
+
+				<!-- Newsletter Subscribe -->
+				<div class="newsletter-section">
+					<div class="newsletter-content">
+						<h4>Mantém-te atualizada sobre o Mãe+</h4>
+						<p>Recebe atualizações sobre o desenvolvimento da plataforma e conteúdos exclusivos sobre
+							maternidade.</p>
+						<form class="newsletter-form" id="newsletter-form">
+							<div class="newsletter-input-group">
+								<input type="email" placeholder="O teu email" required>
+								<button type="submit" class="newsletter-btn">
+									<span>Subscrever</span>
+									<span class="newsletter-icon">💌</span>
+								</button>
+							</div>
+							<small class="newsletter-note">Sem spam, apenas conteúdo valioso. Podes cancelar a qualquer
+								momento.</small>
+						</form>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
 
+	<!-- Footer -->
 	<footer role="contentinfo">
 		<div class="container">
-			<p>Criado com <span class="heart" aria-hidden="true">❤️</span> para mães em Portugal</p>
-			<nav aria-label="Redes sociais">
-				<a href="https://www.instagram.com/mae.mais.pt" target="_blank">Instagram</a>
-				<a href="mailto:ola@maemais.pt">Email</a>
-			</nav>
+			<div class="footer-content">
+				<div class="footer-main">
+					<div class="footer-logo">
+						<img src="logo/yb51wyidjesdrsdztias.png" alt="Logo Mãe+" class="footer-logo-img">
+						<h5>Mãe+</h5>
+					</div>
+					<p class="footer-description">Criado com <span class="heart" aria-hidden="true">💕</span> por uma
+						enfermeira e mãe para todas as mães de Portugal</p>
+				</div>
+
+				<div class="footer-links">
+					<div class="footer-section">
+						<h6>Projeto</h6>
+						<ul>
+							<li><a href="#valores">O que é</a></li>
+							<li><a href="#hero">Pré-Inscrição</a></li>
+							<li><a href="#sobre">Sobre</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h6>Contacto</h6>
+						<ul>
+							<li><a href="mailto:contacto@maemais.pt">Email</a></li>
+							<li><a href="https://www.instagram.com/maemais.pt" target="_blank"
+									rel="noopener">Instagram</a></li>
+						</ul>
+					</div>
+					<div class="footer-section">
+						<h6>Legal</h6>
+						<ul>
+							<li><a href="#privacidade">Privacidade</a></li>
+							<li><a href="#termos">Termos</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p class="copyright">© 2025 Mãe+ • Todos os direitos reservados</p>
+				<p class="made-with-love">Feito com muito amor em Portugal 🇵🇹</p>
+			</div>
 		</div>
 	</footer>
 
+	<!-- Loading overlay -->
+	<div id="loading-overlay" class="loading-overlay" style="display: none;">
+		<div class="loading-content">
+			<div class="loading-spinner"></div>
+			<p>A processar...</p>
+		</div>
+	</div>
+
+	<!-- Scripts -->
 	<script src="js/main.js" defer></script>
 </body>
 
